@@ -563,14 +563,11 @@ input {
 }
 
 #my_collections .title,
-#activity_feed .title,
-#latest_trends .title {
-	margin-bottom: 10px;
+#activity_feed .title {
 	width: 430px;
 	height: 50px;
 	line-height: 50px;
 	font-size: 20px;
-	border-bottom: 5px solid #3B6B9C;
 }
 
 #new_collection_button {
@@ -608,7 +605,6 @@ input {
 	width: 90%;
 	height: 28px;
 	line-height: 28px;
-	
 	font-weight: bold;
 	color: #333;
 	background: url(/images/collection_summary.png) repeat-x;

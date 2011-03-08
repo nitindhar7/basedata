@@ -11,11 +11,11 @@
 		<%= link_to "", {:controller => "dashboard", :action => "index"}, :id => "signedin_nav_logo" %>
 		<div id="signedin_nav_right">
 			<div id="signedin_nav_right_top">
-				<div id="welcome_user">Welcome, <%= session[:user].name %> (<%= get_company_name(session[:user].account_id) %>)</div>
+				<div id="welcome_user">Welcome, <%= session[:user].name %></div>
 			</div>
 			<div id="signedin_nav_right_bottom">
 				<%= link_to "SIGN OUT", {:controller => "users", :action => "signout"}, :id => "signedin_nav_signout" %>
-				<%= link_to "SUPPORT", users_path, :id => "signedin_nav_help", :class => get_nav_hightlight("help") %>
+				<%= link_to "SUPPORT", {:controller => "features", :action => "index"}, :id => "signedin_nav_help", :class => get_nav_hightlight("help") %>
 				<%= link_to "ACCOUNT", user_path(session[:user]), :id => "signedin_nav_account", :class => get_nav_hightlight("users") %>
 				<%= link_to "DASHBOARD", {:controller => "dashboard", :action => "index"}, :id => "signedin_nav_dashboard", :class => get_nav_hightlight("dashboard") %>
 			</div>

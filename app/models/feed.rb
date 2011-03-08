@@ -9,7 +9,7 @@ class Feed
   end
   
   def refine_options(params)
-    @query = refine(params[:query]).gsub(/["]/, '%22')
+    @query = refine(params[:query])
     @price_low = refine(params[:price_low])
     @price_high = refine(params[:price_high])
     @seller = refine(params[:seller])

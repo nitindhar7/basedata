@@ -30,6 +30,18 @@
 					<%= f.password_field :password, :class => "field" %>
 					<%= label_tag(:confirm_password, "Confirm Password") %>
 					<%= f.password_field :confirm_password, :class => "field" %>
+					<%= label_tag(:company, "Company") %>
+					<%= f.text_field :company, :class => "field" %>
+					<%= label_tag(:phone, "Phone") %>
+					<%= f.text_field :phone, :class => "field" %>
+					<%= label_tag(:billing_street, "Street") %>
+					<%= f.text_field :billing_street, :class => "field" %>
+					<%= label_tag(:billing_city, "City") %>
+					<%= f.text_field :billing_city, :class => "field" %>
+					<%= label_tag(:billing_state, "State") %>
+					<%= select("account", "billing_state", Account::STATES, {}, {:class => "field"}) %>
+					<%= label_tag(:billing_zip, "Zip") %>
+					<%= f.text_field :billing_zip, :class => "field" %>
 					<%= f.submit "Create Account", :class => "button" %>
 				<% end %>
 			</div>

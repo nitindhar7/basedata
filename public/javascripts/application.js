@@ -24,7 +24,7 @@ $(document).ready(function() {
 	/*
 	 * Un/Select from checkbox
 	 */
-	$('#search_main_content table tr.headers th.checkbox input').live('click', function() {
+	$('#search_main_content table tr.headers td.checkbox input').live('click', function() {
 		var status = $(this).attr('checked');
 		
 		if (status == false)

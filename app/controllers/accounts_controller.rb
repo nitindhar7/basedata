@@ -35,8 +35,6 @@ class AccountsController < ApplicationController
     @account.password = Digest::SHA1.hexdigest(@account.password)
     confirm_password = Digest::SHA1.hexdigest(@account.confirm_password)
 
-    @account.phone.gsub(/[^0-9]/, '')
-
     respond_to do |format|
       if @account.save && confirm_password == @account.password
         @user = User.new
