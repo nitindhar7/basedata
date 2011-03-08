@@ -1,5 +1,0 @@
-<div id="presignin_nav">
-	<%= link_to "BASE DATA", {:controller => "dashboard", :action => "welcome"}, :id => "presignin_nav_logo" %>
-	<%= link_to "SIGN IN", users_path, :id => "presignin_nav_signin" %>
-	<%= link_to "FEATURES", users_path, :id => "presignin_nav_features" %>
-</div>
