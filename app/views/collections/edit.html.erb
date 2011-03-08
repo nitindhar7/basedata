@@ -1,0 +1,20 @@
+<div id="collection_label">
+	<%= @collection.name %>
+	<%= link_to "BACK", collection_path(@collection), :id => "collection_back_button" %>
+</div>
+<div id="collection_edit_content">
+	<% form_for(@collection) do |f| %>
+		<%= label_tag(:name, "Collection Name") %>
+		<%= f.text_field :name %>
+		<%= f.submit "Save" %>
+	<% end %>
+</div>
+<div id="collection_sub_content">
+	<div id="collection_sub_content_delete">
+		<div class="content">
+			<span class="label">Delete this collection</span><br/>
+			<span class="warning">Once you delete a collection, there is no going back. Please confirm.</span>
+		</div>
+		<%= link_to "Delete this collection", @collection, :confirm => "Continue deleting?", :method => :delete, :class => "button" %>
+	</div>
+</div>

@@ -1,0 +1,57 @@
+<div id="accounts_main_content_wrapper">
+	<div id="accounts_main_content">
+		<div id="account_name"><%= @account.company %></div>
+		<div id="account_settings">
+			<div class="label">
+				Account Details
+				<div class="button">Edit</div>
+			</div>
+			<div class="content">
+				<div class="account_details">
+					<div class="account_details_label">Name</div>
+					<div class="account_details_content"><%= "#{@account.first_name} #{@account.last_name}" %></div>
+				</div>
+				<div class="account_details">
+					<div class="account_details_label">Email</div>
+					<div class="account_details_content"><%= @account.email %></div>
+				</div>
+				<div class="account_details">
+					<div class="account_details_label">Company</div>
+					<div class="account_details_content"><%= @account.company %></div>
+				</div>
+				<div class="account_details">
+					<div class="account_details_label">Phone</div>
+					<div class="account_details_content"><%= number_to_phone(@account.phone, :area_code => true) %></div>
+				</div>
+				<div class="account_details">
+					<div class="account_details_label">Address</div>
+					<div class="account_details_content"><%= @account.billing_street %></div>
+				</div>
+				<div class="account_details">
+					<div class="account_details_label"></div>
+					<div class="account_details_content"><%= @account.billing_city %>, <%= @account.billing_state %> <%= @account.billing_zip %></div>
+				</div>
+				<div class="account_details">
+					<div class="account_details_label">Membership</div>
+					<div class="account_details_content"><%= distance_of_time_in_words(@account.created_at, Time.now) %></div>
+				</div>
+			</div>
+		</div>
+		<div id="account_members">
+			<div class="label">
+				Members
+				<div class="button">Add Member</div>
+			</div>
+			<div class="content">
+				<% for @member in @members %>
+					<div class="member_details">
+						<div class="member_details_name"><%= @member.name %></div>
+						<div class="member_details_email"><%= @member.email %></div>
+						<div class="member_details_role"><%= @member.role.capitalize %></div>
+					</div>
+				<% end %>
+				<%= %>
+			</div>
+		</div>
+	</div>
+</div>

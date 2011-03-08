@@ -1,0 +1,23 @@
+<div id="search_label">
+	Results for "<%= @query %>"
+	<% form_tag({:controller => "search", :action => "index"}, :id => "searchbar") do %>
+		<%= text_field_tag(:query) %>
+		<%= submit_tag("Search", :id => "searchbar_submit") %>
+	<% end %>
+</div>
+<div id="search_main_content">
+	<table cellpadding="0" cellspacing="0">
+		<% for @column in @columns %>
+			<th><%= @column %></th>
+		<% end %>
+		<% for @entry in @rss["entry"] %>
+			<tr>
+				<td><%= @entry["mpn"].first["content"] unless @entry["mpn"].nil? %></td>
+				<td><%= @entry["price"].first["content"] unless @entry["price"].nil? %></td>
+				<td><%= @entry["author"].first["name"] unless @entry["author"].nil? %></td>
+				<td><%= @entry["condition"].first["content"] unless @entry["condition"].nil? %></td>
+				<td><%= @entry["brand"].first["content"] unless @entry["brand"].nil? %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>

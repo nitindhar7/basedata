@@ -1,0 +1,26 @@
+<div id="header">
+<% if session[:user].blank? %>
+	<div id="presignin_nav">
+		<%= link_to "BASE <span>DATA</span>", {:controller => "dashboard", :action => "welcome"}, :id => "presignin_nav_logo" %>
+		<%= link_to "SIGN IN", users_path, :id => "presignin_nav_signin" %>
+		<%= link_to "PRICING", users_path, :id => "presignin_nav_pricing" %>
+		<%= link_to "FEATURES", users_path, :id => "presignin_nav_features" %>
+	</div>
+<% else %>
+	<div id="signedin_nav">
+		<%= link_to "BASE <span>DATA</span>", {:controller => "dashboard", :action => "index"}, :id => "signedin_nav_logo" %>
+		<div id="signedin_nav_right">
+			<div id="signedin_nav_right_top">
+				<div id="welcome_user">Welcome, <%= session[:user].name %></div>
+			</div>
+			<div id="signedin_nav_right_bottom">
+				<%= link_to "SIGN OUT", {:controller => "users", :action => "signout"}, :id => "signedin_nav_signout" %>
+				<%= link_to "SUPPORT", users_path, :id => "signedin_nav_help", :class => get_nav_hightlight("help") %>
+				<%= link_to "ACCOUNT", users_path, :id => "signedin_nav_account", :class => get_nav_hightlight("account") %>
+				<%= link_to "COLLECTIONS", users_path, :id => "signedin_nav_collections", :class => get_nav_hightlight("collections") %>
+				<%= link_to "DASHBOARD", {:controller => "dashboard", :action => "index"}, :id => "signedin_nav_dashboard", :class => get_nav_hightlight("dashboard") %>
+			</div>
+		</div>
+	</div>
+<% end %>
+</div>

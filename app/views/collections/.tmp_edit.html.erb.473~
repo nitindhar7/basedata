@@ -1,0 +1,12 @@
+<div id="collection_label">
+	<%= @collection.name %>
+	<%= link_to "BACK", collection_path(@collection), :id => "collection_back_button" %>
+</div>
+<div id="collection_main_content">
+	<%= error_messages_for :collection %>
+	<% form_for(@collection) do |f| %>
+		<%= label_tag(:name, "Name") %>
+		<%= f.text_field :name %>
+		<%= f.submit "Save" %>
+	<% end %>
+</div>

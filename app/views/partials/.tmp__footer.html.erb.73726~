@@ -1,0 +1,13 @@
+<div id="footer">
+	<div id="footer_content_wrapper">
+		<div id="footer_links">
+			<%= link_to "Base Data", :controller => "dashboard", :action => "welcome" %><span>/</span>
+			<%= link_to "Dashboard", :controller => "dashboard", :action => "index" %><span>/</span>
+			<%= link_to "Features", :controller => "dashboard", :action => "index" %><span>/</span>
+			<%= link_to "Pricing", :controller => "dashboard", :action => "index" %><span>/</span>
+			<%= link_to "Help Center", :controller => "dashboard", :action => "index" %><span>/</span>
+			<%= link_to "API", :controller => "dashboard", :action => "index" %>
+		</div>
+		<div id="footer_app_info">&copy; 2010 BASE DATA, ALL RIGHTS RESERVED</div>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+#TODO: display which type of navigation to show based on whether a user is logged in or not 
+<div id="nav">
+	<%= link_to "BASE DATA", {:controller => "dashboard", :action => "index"}, :id => "home_nav_logo" %>
+	<%= link_to "SIGN IN", users_path, :id => "home_nav_signin" %>
+	<%= link_to "FEATURES", users_path, :id => "home_nav_features" %>
+</div>

@@ -1,0 +1,11 @@
+<div id="features_left_nav">
+	<%= link_to "Overview", {:controller => "features", :action => "index"}, :class => "feature_listing" %>
+	<%= link_to "Data Collection", {:controller => "features", :action => "data_collection"}, :class => "feature_listing" %>
+	<%= link_to "Data Mining", {:controller => "features", :action => "data_mining"}, :class => "feature_listing" %>
+	<%= link_to "Trending", {:controller => "features", :action => "trending"}, :class => "feature_listing" %>
+	<%= link_to "SEO", {:controller => "features", :action => "seo"}, :class => "feature_listing" %>
+	<%= link_to "UI", {:controller => "features", :action => "ui"}, :class => "feature_listing" %>
+	<%= link_to "Use Cases", {:controller => "features", :action => "use_cases"}, :class => "feature_listing" %>
+	<%= link_to "Support & API", {:controller => "features", :action => "support_and_api"}, :class => "feature_listing" %>
+</div>
+<%= link_to "Sign Up Now", new_account_path, :id => "features_signup_button" %>

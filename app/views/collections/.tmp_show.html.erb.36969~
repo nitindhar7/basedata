@@ -1,0 +1,26 @@
+<div id="collection_label">
+	<%= @collection.name %>
+	<%= link_to "SETTINGS", edit_collection_path(@collection), :id => "collection_settings_button" %>
+</div>
+<div id="collection_main_content">
+	<div id="collection_header">
+		<div class="collection_column collection_results_column_checkbox"><input type="checkbox"></div>
+		<div class="collection_column collection_results_column_mpn">Part Number</div>
+		<div class="collection_column collection_results_column_price">Price</div>
+		<div class="collection_column collection_results_column_seller">Seller</div>
+		<div class="collection_column collection_results_column_condition">Condition</div>
+		<div class="collection_column collection_results_column_brand">Brand</div>
+	</div>
+	<div id="collection_data">
+		<% for @product in @products %>
+			<div class="collection_row">
+				<div class="collection_cell collection_results_cell_checkbox"><input type="checkbox"></div>
+				<div class="collection_cell collection_results_cell_mpn"><%= @product.mpn %></div>
+				<div class="collection_cell collection_results_cell_price"><%= @product.price %></div>
+				<div class="collection_cell collection_results_cell_seller"><%= @product.seller %></div>
+				<div class="collection_cell collection_results_cell_condition"><%= @product.condition %></div>
+				<div class="collection_cell collection_results_cell_brand"><%= @product.brand %></div>
+			</div>
+		<% end %>
+	</div>
+</div>

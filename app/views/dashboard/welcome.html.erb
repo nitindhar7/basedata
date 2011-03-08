@@ -1,0 +1,56 @@
+<div id="home_main_content_wrapper">
+	<div id="home_main_content">
+		<div id="home_main_content_left">
+			<div id="punchline"></div>
+			<div id="keywords">
+				<%= link_to "Data Collection", {:controller => "features", :action => "data_collection"}, :class => "words" %><span class="bullet">&bull;</span>
+				<%= link_to "Data Mining", {:controller => "features", :action => "data_mining"}, :class => "words" %><span class="bullet">&bull;</span>
+				<%= link_to "Trending", {:controller => "features", :action => "trending"}, :class => "words" %><span class="bullet">&bull;</span>
+				<%= link_to "SEO", {:controller => "features", :action => "seo"}, :class => "words" %>
+			</div>
+			<div id="summary">A lightweight data collection tool that allows small businesses to collect product data, do trending analysis and increase their online presense.</div>
+			<div id="home_main_content_buttons">
+				<%= link_to "", new_account_path, :id => "home_main_content_buttons_signup" %>
+				<%= link_to "", {:controller => "features", :action => "index"}, :id => "home_main_content_buttons_features" %>
+			</div>
+		</div>
+		<div id="home_main_content_right">
+			
+		</div>
+	</div>
+</div>
+<div id="home_sub_content_wrapper">
+	<div id="home_sub_content">
+		<div class="home_sub_content_column">
+			<div class="label">Collect Data Anywhere</div>
+			<div class="content">
+				Create a free account today and get access to pricing data for thousands of products at your fingertips.
+				Setup agents to automatically extract and save data on a schedule. 
+			</div>
+		</div>
+		<div class="home_sub_content_column">
+			<div class="label">Get Daily Pricing Trends</div>
+			<div class="content">
+				Get the latest trends for product pricing to help you make the right decisions and respond to changes
+				in time. Analyze market movements for new openings.
+			</div>
+		</div>
+		<div class="home_sub_content_column">
+			<div class="label">Increase Online Presence</div>
+			<div class="content">
+				Use the data collected via the simple dashboard UI to generate new content and keep your application fresh. More data
+				means more content. More content means better indexing and increased traffic. 
+			</div>
+		</div>
+	</div>
+</div>
+<div id="home_vendors_wrapper">
+	<div id="home_vendors">
+		<div class="label">A few of our data sources...</div>
+		<%= image_tag("bn.png") %>
+		<%= image_tag("overstock.png") %>
+		<%= image_tag("walmart.png") %>
+		<%= image_tag("office_depot.png") %>
+		<%= image_tag("best_buy.png") %>
+	</div>
+</div>

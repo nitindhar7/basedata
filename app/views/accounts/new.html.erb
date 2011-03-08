@@ -1,0 +1,50 @@
+<div id="features_main_content_wrapper">
+	<div id="features_main_content">
+		<div id="features_left_content">
+			<div id="features_left_nav">
+				<%= link_to "Overview", {:controller => "features", :action => "index"}, :class => "feature_listing" %>
+				<%= link_to "Data Collection", {:controller => "features", :action => "data_collection"}, :class => "feature_listing" %>
+				<%= link_to "Data Mining", {:controller => "features", :action => "data_mining"}, :class => "feature_listing" %>
+				<%= link_to "Trending", {:controller => "features", :action => "trending"}, :class => "feature_listing" %>
+				<%= link_to "SEO", {:controller => "features", :action => "seo"}, :class => "feature_listing" %>
+				<%= link_to "UI", {:controller => "features", :action => "ui"}, :class => "feature_listing" %>
+				<%= link_to "Use Cases", {:controller => "features", :action => "use_cases"}, :class => "feature_listing" %>
+				<%= link_to "Support & API", {:controller => "features", :action => "support_and_api"}, :class => "feature_listing" %>
+			</div>
+			<%= link_to "Sign Up Now", new_account_path, :id => "features_signup_button" %>
+		</div>
+		<div id="features_right_content">
+			<div class="label">GET STARTED NOW</div>
+			<% if flash[:error] %>
+				<div class="error"><%= flash[:error] %></div>
+			<% end %>
+			<div class="body">
+				<% form_for(@account) do |f| %>
+					<%= label_tag(:first_name, "First Name") %>
+					<%= f.text_field :first_name, :class => "field" %>
+					<%= label_tag(:last_name, "Last Name") %>
+					<%= f.text_field :last_name, :class => "field" %>
+					<%= label_tag(:email, "Email") %>
+					<%= f.text_field :email, :class => "field" %>
+					<%= label_tag(:password, "Password") %>
+					<%= f.password_field :password, :class => "field" %>
+					<%= label_tag(:confirm_password, "Confirm Password") %>
+					<%= f.password_field :confirm_password, :class => "field" %>
+					<%= label_tag(:company, "Company") %>
+					<%= f.text_field :company, :class => "field" %>
+					<%= label_tag(:phone, "Phone") %>
+					<%= f.text_field :phone, :class => "field" %>
+					<%= label_tag(:billing_street, "Street") %>
+					<%= f.text_field :billing_street, :class => "field" %>
+					<%= label_tag(:billing_city, "City") %>
+					<%= f.text_field :billing_city, :class => "field" %>
+					<%= label_tag(:billing_state, "State") %>
+					<%= select("account", "billing_state", Account::STATES, {}, {:class => "field"}) %>
+					<%= label_tag(:billing_zip, "Zip") %>
+					<%= f.text_field :billing_zip, :class => "field" %>
+					<%= f.submit "Create Account", :class => "button" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

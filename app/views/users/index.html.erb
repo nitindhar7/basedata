@@ -1,0 +1,11 @@
+<div id="users_main_content_wrapper">
+	<div id="users_main_content">
+		<% form_tag({:controller => "users", :action => "signin"}, :id => "sign_in_form") do %>
+			<div id="sign_in_form_label">Sign In</div>
+			<%= text_field_tag(:email, nil, :class => "field", :id => "sign_in_field_email") %>
+			<%= password_field_tag(:password, nil, :class => "field", :id => "sign_in_field_password") %>
+			<%= submit_tag("Get Started", :id => "sign_in_submit") %>
+			<a href="#" id="forgot_password">FORGOT YOUR PASSWORD?</a>
+		<% end %>
+	</div>
+</div>

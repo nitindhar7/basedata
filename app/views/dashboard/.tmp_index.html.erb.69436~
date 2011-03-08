@@ -1,0 +1,26 @@
+<div id="home_main_content_wrapper">
+	<div id="home_main_content">
+		<div id="home_main_content_left">
+			<div id="punchline">Mine Data Anywhere.</div>
+			<div id="summary1">Summary Line 1</div>
+			<div id="summary2">Summary Line 2</div>
+			<div id="home_main_content_buttons">
+				<div id="home_main_content_buttons_signup"><%= link_to "SIGN UP FOR FREE", new_user_path %></div>
+				<div id="home_main_content_buttons_features">VIEW FEATURES</div>
+			</div>
+		</div>
+		<div id="home_main_content_right">
+			
+		</div>
+	</div>
+</div>
+<div id="home_sub_content_wrapper">
+	<div id="home_sub_content">
+		
+	</div>
+</div>
+<div id="home_info_wrapper">
+	<div id="home_info">
+		
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Google Base Data Dashboard</title>
+	<%= stylesheet_link_tag "application" %>
+	<%= javascript_include_tag "jquery", "jqueryui", "application" %> 
+</head>
+<body>
+	<div id="header">
+		<div id="nav">
+			<div id="logo">Find It</div>
+			<form action="/dashboard/snippets">
+				<input type="text" name="query" class="textinput">
+				<input type="submit" value="Go" class="submitinput">
+			</form>
+		</div>
+	</div>
+	<%= yield %>
+</body>
+</html>

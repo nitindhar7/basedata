@@ -1,0 +1,20 @@
+<div id="collection_label">
+	<%= @collection.name %>
+	<%= link_to "SETTINGS", edit_collection_path(@collection), :id => "collection_settings_button" %>
+</div>
+<div id="collection_main_content">
+	<table cellpadding="0" cellspacing="0">
+		<% for @column in @columns %>
+			<th><%= @column %></th>
+		<% end %>
+		<% for @product in @products %>
+			<tr>
+				<td><%= product.mpn %></td>
+				<td><%= product.price %></td>
+				<td><%= product.author %></td>
+				<td><%= product.condition %></td>
+				<td><%= product.brand %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>
