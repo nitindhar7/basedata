@@ -1,7 +1,6 @@
 class DashboardController < ApplicationController
   
   def welcome
-    @user = User.new
   end
   
   def index

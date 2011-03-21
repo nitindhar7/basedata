@@ -3,15 +3,15 @@
 		<div id="home_main_content_left">
 			<div id="punchline"></div>
 			<div id="keywords">
-				<%= link_to "Data Collection", {:controller => "features", :action => "data_collection"}, :class => "words" %><span class="bullet">&bull;</span>
-				<%= link_to "Data Mining", {:controller => "features", :action => "data_mining"}, :class => "words" %><span class="bullet">&bull;</span>
-				<%= link_to "Trending", {:controller => "features", :action => "trending"}, :class => "words" %><span class="bullet">&bull;</span>
-				<%= link_to "SEO", {:controller => "features", :action => "seo"}, :class => "words" %>
+				<div class="words">Data Collection</div><span class="bullet">&bull;</span>
+				<div class="words">Data Mining</div><span class="bullet">&bull;</span>
+				<div class="words">Trending</div><span class="bullet">&bull;</span>
+				<div class="words">SEO</div>
 			</div>
 			<div id="summary">A lightweight data collection tool that allows small businesses to collect product data, do trending analysis and increase their online presense.</div>
 			<div id="home_main_content_buttons">
 				<%= link_to "", new_account_path, :id => "home_main_content_buttons_signup" %>
-				<%= link_to "", {:controller => "features", :action => "index"}, :id => "home_main_content_buttons_features" %>
+				<%= link_to "", features_path, :id => "home_main_content_buttons_features" %>
 			</div>
 		</div>
 		<div id="home_main_content_right">

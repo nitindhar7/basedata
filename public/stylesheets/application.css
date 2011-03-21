@@ -217,7 +217,7 @@ input {
 	-webkit-border-radius: 5px;
 }
 
-#keywords a.words {
+#keywords .words {
 	width: 120px;
 	height: 20px;
 	line-height: 20px;
@@ -226,10 +226,6 @@ input {
 	color: #999;
 	display: block;
 	float: left;
-}
-
-#keywords a.words:hover {
-	color: #FFF;
 }
 
 #keywords span.bullet {

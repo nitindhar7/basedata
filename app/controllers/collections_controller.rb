@@ -61,7 +61,7 @@ class CollectionsController < ApplicationController
         @activity.save
         
         flash[:notice] = "Collection #{@collection.name} was successfully created."
-        format.html { redirect_to(:controller => "dashboard", :action => "index") }
+        format.html { redirect_to(dashboard_path) }
         format.xml  { render :xml => @collection, :status => :created, :location => @collection }
       else
         format.html { render :action => "new" }
@@ -120,7 +120,7 @@ class CollectionsController < ApplicationController
     @collection.destroy
 
     respond_to do |format|
-      format.html { redirect_to(:controller => "dashboard", :action => "index") }
+      format.html { redirect_to(dashboard_path) }
       format.xml  { head :ok }
     end
   end

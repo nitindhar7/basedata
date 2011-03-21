@@ -1,23 +1,23 @@
 <div id="header">
 <% if session[:user].blank? %>
 	<div id="presignin_nav">
-		<%= link_to "", {:controller => "dashboard", :action => "welcome"}, :id => "presignin_nav_logo" %>
-		<%= link_to "SIGN IN", users_path, :id => "presignin_nav_signin", :class => get_nav_hightlight("users") %>
-		<%= link_to "SUPPORT", {:controller => "features", :action => "index"}, :id => "presignin_nav_features", :class => get_nav_hightlight("features") %>
-		<%= link_to "FEATURES", {:controller => "features", :action => "index"}, :id => "presignin_nav_features", :class => get_nav_hightlight("features") %>
+		<%= link_to "", root_path, :id => "presignin_nav_logo" %>
+		<%= link_to "SIGN IN", accounts_path, :id => "presignin_nav_signin", :class => get_nav_hightlight("users") %>
+		<%= link_to "SUPPORT", support_path, :id => "presignin_nav_features", :class => get_nav_hightlight("features") %>
+		<%= link_to "FEATURES", features_path, :id => "presignin_nav_features", :class => get_nav_hightlight("features") %>
 	</div>
 <% else %>
 	<div id="signedin_nav">
-		<%= link_to "", {:controller => "dashboard", :action => "index"}, :id => "signedin_nav_logo" %>
+		<%= link_to "", dashboard_path, :id => "signedin_nav_logo" %>
 		<div id="signedin_nav_right">
 			<div id="signedin_nav_right_top">
 				<div id="welcome_user">Welcome, <%= session[:user].name %></div>
 			</div>
 			<div id="signedin_nav_right_bottom">
 				<%= link_to "SIGN OUT", {:controller => "users", :action => "signout"}, :id => "signedin_nav_signout" %>
-				<%= link_to "SUPPORT", {:controller => "features", :action => "index"}, :id => "signedin_nav_help", :class => get_nav_hightlight("help") %>
+				<%= link_to "SUPPORT", support_path, :id => "signedin_nav_help", :class => get_nav_hightlight("help") %>
 				<%= link_to "ACCOUNT", user_path(session[:user]), :id => "signedin_nav_account", :class => get_nav_hightlight("users") %>
-				<%= link_to "DASHBOARD", {:controller => "dashboard", :action => "index"}, :id => "signedin_nav_dashboard", :class => get_nav_hightlight("dashboard") %>
+				<%= link_to "DASHBOARD", dashboard_path, :id => "signedin_nav_dashboard", :class => get_nav_hightlight("dashboard") %>
 			</div>
 		</div>
 	</div>

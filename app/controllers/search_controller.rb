@@ -26,6 +26,6 @@ class SearchController < ApplicationController
   
   def redirect_to_page(message)
     flash[:error] = message
-    redirect_to(:controller => "dashboard", :action => "index")
+    redirect_to(dashboard_path)
   end
 end

@@ -1,3 +1,5 @@
+require 'digest/sha1'
+
 class AccountsController < ApplicationController
 
   # GET /accounts
@@ -31,6 +33,9 @@ class AccountsController < ApplicationController
   # POST /accounts
   # POST /accounts.xml
   def create
+    #@user = User.new(params[:user])
+    #@user.password = Digest::SHA1.hexdigest(@user.password)
+    
     @account = Account.new(params[:account])
     @account.password = Digest::SHA1.hexdigest(@account.password)
     confirm_password = Digest::SHA1.hexdigest(@account.confirm_password)
@@ -49,7 +54,7 @@ class AccountsController < ApplicationController
         session[:user] = @user
         flash[:notice] = "Account was successfully created."
         
-        format.html { redirect_to(:controller => "dashboard", :action => "index") }
+        format.html { redirect_to(dashboard_path) }
         format.xml  { render :xml => @account, :status => :created, :location => @account }
       else
         @account.password = nil
@@ -105,6 +110,34 @@ class AccountsController < ApplicationController
       format.html { redirect_to(accounts_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def signin
+    @email = params[:email]
+    @password = Digest::SHA1.hexdigest(params[:password])
+    
+    @account = Account.find(:first, :conditions => {:email => @email, :password => @password})
+
+    if !@account.blank?
+      flash[:notify] = ""
+      session[:account] = @account
+      redirect_to(dashboard_path)
+    else
+      reset_session
+      flash[:error] = "Invalid ID or password. Please try again."
+      redirect_to(accounts_path)
+    end
+  end
+  
+  def signout
+    reset_session
+    redirect_to(accounts_path)
+  end
+  
+  private
+  
+  def reset_session
+    session[:account] = nil
   end
   
 end
