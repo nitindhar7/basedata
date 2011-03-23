@@ -1,9 +1,9 @@
 <div id="header">
-<% if session[:user].blank? %>
+<% if session[:account].blank? %>
 	<div id="presignin_nav">
 		<%= link_to "", root_path, :id => "presignin_nav_logo" %>
-		<%= link_to "SIGN IN", accounts_path, :id => "presignin_nav_signin", :class => get_nav_hightlight("users") %>
-		<%= link_to "SUPPORT", support_path, :id => "presignin_nav_features", :class => get_nav_hightlight("features") %>
+		<%= link_to "SIGN IN", accounts_path, :id => "presignin_nav_signin", :class => get_nav_hightlight("accounts") %>
+		<%= link_to "SUPPORT", support_path, :id => "presignin_nav_features", :class => get_nav_hightlight("support") %>
 		<%= link_to "FEATURES", features_path, :id => "presignin_nav_features", :class => get_nav_hightlight("features") %>
 	</div>
 <% else %>
@@ -11,12 +11,12 @@
 		<%= link_to "", dashboard_path, :id => "signedin_nav_logo" %>
 		<div id="signedin_nav_right">
 			<div id="signedin_nav_right_top">
-				<div id="welcome_user">Welcome, <%= session[:user].name %></div>
+				<div id="welcome_user">Welcome, <%= session[:account].name %></div>
 			</div>
 			<div id="signedin_nav_right_bottom">
-				<%= link_to "SIGN OUT", {:controller => "users", :action => "signout"}, :id => "signedin_nav_signout" %>
+				<%= link_to "SIGN OUT", signout_path, :id => "signedin_nav_signout" %>
 				<%= link_to "SUPPORT", support_path, :id => "signedin_nav_help", :class => get_nav_hightlight("help") %>
-				<%= link_to "ACCOUNT", user_path(session[:user]), :id => "signedin_nav_account", :class => get_nav_hightlight("users") %>
+				<%= link_to "ACCOUNT", account_path(session[:account]), :id => "signedin_nav_account", :class => get_nav_hightlight("users") %>
 				<%= link_to "DASHBOARD", dashboard_path, :id => "signedin_nav_dashboard", :class => get_nav_hightlight("dashboard") %>
 			</div>
 		</div>

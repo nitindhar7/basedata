@@ -11,7 +11,6 @@ class AccountsController < ApplicationController
   # GET /accounts/1.xml
   def show
     @account = Account.find(params[:id])
-    @products = Product.find(:all, :conditions => {:account_id => @account.id})
 
     respond_to do |format|
       format.html # show.html.erb
@@ -33,32 +32,19 @@ class AccountsController < ApplicationController
   # POST /accounts
   # POST /accounts.xml
   def create
-    #@user = User.new(params[:user])
-    #@user.password = Digest::SHA1.hexdigest(@user.password)
-    
     @account = Account.new(params[:account])
     @account.password = Digest::SHA1.hexdigest(@account.password)
     confirm_password = Digest::SHA1.hexdigest(@account.confirm_password)
 
     respond_to do |format|
       if @account.save && confirm_password == @account.password
-        @user = User.new
-        @user.name = "#{@account.first_name} #{@account.last_name}"
-        @user.email = @account.email
-        @user.password = @account.password
-        @user.autosave = 0
-        @user.role = 'owner'
-        @user.account_id = @account.id
-        @user.save
-        
-        session[:user] = @user
+        session[:account] = @account
         flash[:notice] = "Account was successfully created."
-        
         format.html { redirect_to(dashboard_path) }
         format.xml  { render :xml => @account, :status => :created, :location => @account }
       else
         @account.password = nil
-        
+        @account.confirm_password = nil
         flash[:error] = "Account could not be created. Please make sure all fields are filled out."
         format.html { render :action => "new" }
         format.xml  { render :xml => @account.errors, :status => :unprocessable_entity }

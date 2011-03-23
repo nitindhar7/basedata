@@ -1,5 +1,5 @@
 class Activity < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :account
   belongs_to :collection
   
   cattr_reader :per_page

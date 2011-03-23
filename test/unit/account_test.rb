@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class AccountTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  
+  test "name" do
+    @account = Account.create(:first_name => "John", :last_name => "Doe", :email => "jdoe@basedataapp.com", :password => "jdoe")
+    
+    assert_equal "John Doe", @account.name
   end
 end

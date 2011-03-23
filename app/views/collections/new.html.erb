@@ -1,5 +1,6 @@
 <% form_for(@collection) do |f| %>
-	<%= label_tag(:name, "Name") %>
+	<%= error_messages_for :collection %>
+	<%= label_tag(:name, "Collection Name") %>
 	<%= f.text_field :name %>
 	<%= f.submit "Create Collection +" %>
 <% end %>

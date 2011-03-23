@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110321074636) do
+ActiveRecord::Schema.define(:version => 20110323063808) do
 
   create_table "accounts", :force => true do |t|
     t.string   "first_name",     :limit => 25,  :null => false
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20110321074636) do
   end
 
   create_table "activities", :force => true do |t|
-    t.integer  "user_id",         :null => false
     t.integer  "collection_id"
     t.string   "action_taken",    :null => false
     t.datetime "created_at"
@@ -39,7 +38,6 @@ ActiveRecord::Schema.define(:version => 20110321074636) do
 
   create_table "collections", :force => true do |t|
     t.string   "name",       :limit => 50, :null => false
-    t.integer  "user_id",                  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "account_id",               :null => false

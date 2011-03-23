@@ -719,9 +719,36 @@ input {
  */
 #new_collection {
 	margin: auto;
+	margin-top: 10px;
 	width: 900px;
-	height: 200px;
 }
+
+#new_collection label {
+	width: 900px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+}
+
+#new_collection .errorExplanation {
+	margin-bottom: 10px;
+	padding: 10px;
+	width: 880px;
+	background: #990000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+#new_collection .errorExplanation h2,
+#new_collection .errorExplanation p { display: none; }
+
+#new_collection .errorExplanation ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+#new_collection .errorExplanation ul li { color: #FFF; }
 
 #collection_label {
 	margin: auto;
