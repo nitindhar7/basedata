@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
   config.gem "simple-rss"
   config.gem 'will_paginate', :version => '~> 2.3.15', :source => 'http://gemcutter.org'
   config.gem "rack", :version => "1.0.1"
+  config.gem "xml-simple", :lib => 'xmlsimple', :source => "http://gemcutter.org"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
