@@ -65,8 +65,8 @@ class AccountsController < ApplicationController
     respond_to do |format|
       if @account.update_attributes(params[:account])
         @activity = Activity.new
-        @activity.user_id = session[:user].id
         @activity.account_id = @account.id
+        @activity.user_name = session[:account].name
         @activity.action_taken = "updated account"
         @activity.save
         
@@ -85,12 +85,6 @@ class AccountsController < ApplicationController
   def destroy
     @account = Account.find(params[:id])
     @account.destroy
-
-    @activity = Activity.new
-    @activity.user_id = session[:user].id
-    @activity.account_id = params[:id]
-    @activity.action_taken = "deleted account"
-    @activity.save
 
     respond_to do |format|
       format.html { redirect_to(accounts_url) }

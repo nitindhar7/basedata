@@ -2,9 +2,6 @@ class FeaturesController < ApplicationController
   def index
   end
 
-  def support
-  end
-
   def data_collection  
   end
   

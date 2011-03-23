@@ -141,7 +141,8 @@ input {
 
 #signedin_nav_collections,
 #signedin_nav_account,
-#signedin_nav_help,
+#signedin_nav_support,
+#signedin_nav_features,
 #signedin_nav_dashboard,
 #signedin_nav_signout {
 	margin-right: 20px;
@@ -168,7 +169,8 @@ input {
 
 #signedin_nav_collections:hover,
 #signedin_nav_account:hover,
-#signedin_nav_help:hover,
+#signedin_nav_support:hover,
+#signedin_nav_features:hover,
 #signedin_nav_dashboard:hover,
 #signedin_nav_signout:hover {
 	background: #1F242A;
@@ -1320,16 +1322,6 @@ input {
 	width: 900px;
 }
 
-#account_name {
-	margin-top: 20px;
-	width: 900px;
-	height: 50px;
-	line-height: 50px;
-	color: #60BB22;
-	font-size: 30px;
-	font-weight: bold;
-}
-
 #account_settings {
 	margin-top: 20px;
 	width: 900px;
@@ -1376,7 +1368,7 @@ input {
 
 #account_settings .content .account_details .account_details_label {
 	padding: 0 10px;
-	width: 79px;
+	width: 99px;
 	height: 30px;
 	line-height: 30px;
 	text-align: right;
@@ -1388,7 +1380,7 @@ input {
 
 #account_settings .content .account_details .account_details_content {
 	padding: 0 10px;
-	width: 759px;
+	width: 739px;
 	height: 30px;
 	line-height: 30px;
 	color: #666;
@@ -1396,43 +1388,23 @@ input {
 	float: left;
 }
 
-#account_members {
-	margin-top: 20px;
-	width: 900px;
-}
-
-#account_members .label {
-	width: 900px;
-	height: 50px;
-	line-height: 50px;
-	font-size: 18px;
-	color: #3B6B9C; 
-}
-
-#account_members .content {
-	padding: 10px;
-	width: 880px;
-	background: #F5F5F5;
+#account_settings .content .edit_account .field {
+	margin-left: 10px;
+	margin-top: 5px;
+	width: 747px;
+	height: 20px;
+	border: 1px solid #CCC;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
 
-#account_members .content .member_details {
-	width: 880px;
-	height: 30px;
-}
-
-#account_members .content .member_details .member_details_name,
-#account_members .content .member_details .member_details_email,
-#account_members .content .member_details .member_details_role {
+#account_settings .content .edit_account .button {
+	margin-top: 10px;
+	padding: 0 10px;
 	height: 30px;
 	line-height: 30px;
-	float: left;
+	float: right;
 }
-
-#account_members .content .member_details .member_details_name { width: 300px; }
-#account_members .content .member_details .member_details_email { width: 300px; }
-#account_members .content .member_details .member_details_role { width: 280px; }
 
 
 /*

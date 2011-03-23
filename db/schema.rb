@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110323063808) do
+ActiveRecord::Schema.define(:version => 20110323172845) do
 
   create_table "accounts", :force => true do |t|
     t.string   "first_name",     :limit => 25,  :null => false
@@ -65,9 +65,9 @@ ActiveRecord::Schema.define(:version => 20110323063808) do
 
   create_table "searches", :force => true do |t|
     t.string   "query",      :limit => 200, :null => false
-    t.integer  "user_id",                   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "account_id",                :null => false
   end
 
   create_table "sessions", :force => true do |t|

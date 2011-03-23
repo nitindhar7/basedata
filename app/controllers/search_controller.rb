@@ -5,8 +5,7 @@ class SearchController < ApplicationController
       return
     end
 
-    # Save query for later analysis
-    Search.create(:query => params[:query], :user_id => session[:user].id)
+    Search.create(:query => params[:query], :account_id => session[:account].id)
 
     @data = Feed.new
     @data.refine_options(params)

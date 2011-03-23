@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   
   # Named Routes
   map.features 'features', :controller => :features, :action => :index
-  map.support 'support', :controller => :features, :action => :support
+  map.support 'support', :controller => :support, :action => :index
   map.dashboard 'dashboard', :controller => :dashboard, :action => :index
   map.signin 'signin', :controller => :accounts, :action => :signin
   map.signout 'signout', :controller => :accounts, :action => :signout

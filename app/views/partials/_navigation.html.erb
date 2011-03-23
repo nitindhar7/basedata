@@ -15,8 +15,9 @@
 			</div>
 			<div id="signedin_nav_right_bottom">
 				<%= link_to "SIGN OUT", signout_path, :id => "signedin_nav_signout" %>
-				<%= link_to "SUPPORT", support_path, :id => "signedin_nav_help", :class => get_nav_hightlight("help") %>
-				<%= link_to "ACCOUNT", account_path(session[:account]), :id => "signedin_nav_account", :class => get_nav_hightlight("users") %>
+				<%= link_to "SUPPORT", support_path, :id => "signedin_nav_support", :class => get_nav_hightlight("support") %>
+				<%= link_to "FEATURES", features_path, :id => "signedin_nav_features", :class => get_nav_hightlight("features") %>
+				<%= link_to "ACCOUNT", account_path(session[:account]), :id => "signedin_nav_account", :class => get_nav_hightlight("accounts") %>
 				<%= link_to "DASHBOARD", dashboard_path, :id => "signedin_nav_dashboard", :class => get_nav_hightlight("dashboard") %>
 			</div>
 		</div>

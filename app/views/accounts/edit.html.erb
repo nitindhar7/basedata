@@ -1,0 +1,29 @@
+<div id="accounts_main_content_wrapper">
+	<div id="accounts_main_content">
+		<div id="account_settings">
+			<div class="label">
+				Account Details
+				<%= link_to "Back", account_path(@account), :class => "button" %>
+			</div>
+			<div class="content">
+				<% form_for(@account) do |f| %>
+					<div class="account_details">
+						<%= label_tag(:first_name, "First Name", :class => "account_details_label") %>
+						<%= f.text_field :first_name, :class => "field" %>
+					</div>
+					<div class="account_details">
+						<%= label_tag(:last_name, "Last Name", :class => "account_details_label") %>
+						<%= f.text_field :last_name, :class => "field" %>
+					</div>
+					<div class="account_details">
+						<%= label_tag(:email, "Email", :class => "account_details_label") %>
+						<%= f.text_field :email, :class => "field" %>
+					</div>
+					<div class="account_details">
+						<%= f.submit "Update Account", :class => "button" %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
