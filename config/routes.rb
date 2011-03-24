@@ -9,6 +9,7 @@ ActionController::Routing::Routes.draw do |map|
   map.dashboard 'dashboard', :controller => :dashboard, :action => :index
   map.signin 'signin', :controller => :accounts, :action => :signin
   map.signout 'signout', :controller => :accounts, :action => :signout
+  map.export_collection 'export_collection/:collection_id', :controller => :product, :action => :export_collection, :collection_id => :collection_id
   
   # Regular Routes
   # Clump data at the end of the url. product_data is never actually references

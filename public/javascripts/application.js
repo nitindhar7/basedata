@@ -124,4 +124,15 @@ $(document).ready(function() {
 			$("#price_hi").val(ui.values[1]);
 		}
 	});
+
+	$("#account_settings .content .edit_account .button").live('click', function() {
+		var button_text = $(this).text();
+		
+		$("#account_settings .content .edit_account .change_password").slideToggle();
+		
+		if (button_text == "Change Password")
+			$(this).text("Cancel");
+		else
+			$(this).text("Change Password");
+	});
 });

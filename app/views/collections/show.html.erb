@@ -1,8 +1,10 @@
 <div id="collection_label">
 	<%= @collection.name %>
 	<%= link_to "SETTINGS", edit_collection_path(@collection), :id => "collection_settings_button" %>
+	<%= link_to "EXPORT", export_collection_path(:collection_id => @collection), :id => "collection_export_button" %>
 	<div id="collection_size"><%= @products.size %> Records</div>
 </div>
+<div id="collection_error"><%= flash[:error] %></div>
 <div id="collection_main_content">
 	<div id="collection_header">
 		<div class="collection_column collection_results_column_checkbox"><input type="checkbox"></div>

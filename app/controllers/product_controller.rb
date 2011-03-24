@@ -38,5 +38,19 @@ class ProductController < ApplicationController
     
     render :nothing => true
   end
+  
+  def export_collection
+    @products = Product.find(:all, :conditions => {:collection_id => params[:collection_id]})
+    
+    if @products.length > 0
+      collection_export_path = "tmp/collection_#{params[:collection_id]}_export.xml"
+      
+      File.open(Rails.root.join(collection_export_path), 'w') {|f| f.write(@products.to_xml) }
+      send_file collection_export_path
+    else
+      flash[:error] = "Collection is empty. Nothing to export!"
+      redirect_to(collection_path(params[:collection_id]))
+    end
+  end
 
 end

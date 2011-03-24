@@ -16,7 +16,7 @@
 				</div>
 				<div class="account_details">
 					<div class="account_details_label">Membership</div>
-					<div class="account_details_content"><%= distance_of_time_in_words(@account.created_at, Time.now) %></div>
+					<div class="account_details_content">Since <%= @account.created_at.to_date %></div>
 				</div>
 			</div>
 		</div>

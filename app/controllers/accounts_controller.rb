@@ -64,11 +64,10 @@ class AccountsController < ApplicationController
 
     respond_to do |format|
       if @account.update_attributes(params[:account])
-        @activity = Activity.new
-        @activity.account_id = @account.id
-        @activity.user_name = session[:account].name
-        @activity.action_taken = "updated account"
-        @activity.save
+        
+        update_password if !params[:old_password].blank?
+        
+        save_activity(@account.id)
         
         flash[:notice] = "Account #{@account.name} was successfully updated."
         format.html { redirect_to(:action=>:show, :id => @account) }
@@ -118,6 +117,30 @@ class AccountsController < ApplicationController
   
   def reset_session
     session[:account] = nil
+  end
+  
+  def save_activity(account_id)
+    @activity = Activity.new
+    @activity.account_id = account_id
+    @activity.user_name = session[:account].name
+    @activity.action_taken = "updated account"
+    @activity.save
+  end
+  
+  def update_password
+    @old_password = Digest::SHA1.hexdigest(params[:old_password])
+    @new_password = params[:new_password]
+    @confirm_password = params[:confirm_password]
+    
+    if @new_password.blank? || @confirm_password.blank?
+      #
+    elsif @new_password != @confirm_password
+      #
+    elsif @old_password != session[:account].password
+      #
+    else
+      Account.update(session[:account].id, { :password => Digest::SHA1.hexdigest(@new_password) })
+    end
   end
   
 end

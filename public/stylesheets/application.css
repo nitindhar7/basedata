@@ -767,8 +767,10 @@ input {
 }
 
 #collection_settings_button,
-#collection_back_button {
+#collection_back_button,
+#collection_export_button {
 	margin-top: 10px;
+	margin-left: 5px;
 	padding: 0 10px;
 	height: 30px;
 	line-height: 30px;
@@ -781,9 +783,9 @@ input {
 	float: right;
 }
 
-#collection_settings_button:hover {
-	background: #000;
-}
+#collection_settings_button:hover,
+#collection_back_button:hover,
+#collection_export_button:hover { background: #000; }
 
 #collection_size {
 	margin-top: 10px;
@@ -796,6 +798,18 @@ input {
 	color: #999;
 	border-right: 3px solid #CCC;
 	float: right;
+}
+
+#collection_error {
+	margin: auto;
+	margin-bottom: 10px;
+	padding: 0 5px;
+	width: 890px;
+	line-height: 30px;
+	background: #990000;
+	color: #FFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 #collection_header {
@@ -1362,37 +1376,35 @@ input {
 }
 
 #account_settings .content .account_details {
+	margin-bottom: 5px;
 	width: 880px;
-	height: 30px;
+	height: 40px;
 }
 
 #account_settings .content .account_details .account_details_label {
 	padding: 0 10px;
-	width: 99px;
-	height: 30px;
-	line-height: 30px;
+	width: 149px;
+	height: 40px;
+	line-height: 40px;
 	text-align: right;
-	font-weight: bold;
 	color: #37414A;
-	border-right: 1px solid #CCC;
 	float: left;
 }
 
 #account_settings .content .account_details .account_details_content {
 	padding: 0 10px;
-	width: 739px;
-	height: 30px;
-	line-height: 30px;
+	width: 679px;
+	height: 40px;
+	line-height: 40px;
 	color: #666;
-	border-left: 1px solid #FFF;
 	float: left;
 }
 
 #account_settings .content .edit_account .field {
 	margin-left: 10px;
-	margin-top: 5px;
-	width: 747px;
-	height: 20px;
+	padding: 0 10px;
+	width: 677px;
+	height: 30px;
 	border: 1px solid #CCC;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -1406,6 +1418,9 @@ input {
 	float: right;
 }
 
+#account_settings .content .change_password {
+	display: none;
+}
 
 /*
  * FEATURES
